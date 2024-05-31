@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header"><h1>"Create Read Update Delete"</h1></div>
+    <div class="container">
+
+        <div class="input">
+            <label for="id">Código: </label>
+            <input id="id" type="number">
+
+            <label for="nome">Produto: </label>
+            <input id="nome" type="text">
+
+            <label for="qtd">Quantidade: </label>
+            <input id="qtd" type="number">
+        </div>    
+
+        <div class="btn-container">
+            <button class="btn" id="cadastrar">Cadastrar</button>
+            <button class="btn" id="listar">Listar</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                
+                    <th>
+                        cod.
+                    </th>
+                    <th>
+                        nome
+                    </th>
+                    <th>
+                        qtd.
+                    </th>
+                    <th>
+                        ações
+                    </th>
+                
+                </tr>
+            </thead>
+            <tbody>    
+                <tr>
+
+                    <th>
+                        1
+                    </th>
+                    <th>
+                        tomate
+                    </th>
+                    <th>
+                        1kg
+                    </th>
+                    <th>
+                        <button class="btn" id="editar">Editar</button>
+                        <button class="btn" id="deletar">Deletar</button>
+                    </th>
+
+                </tr>
+            </tbody>  
+        </table>
+
+    </div>
+</body>
+
+<script src="script.js" type="text/javascript"></script>
+
+</html>
