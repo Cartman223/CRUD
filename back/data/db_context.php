@@ -54,7 +54,7 @@ private function run_query_sql($query){
 } 
 
 public function cadastrar($produto, $quantidade) {
-    $query = "INSERT INTO estoque_produtos (produto, quantidade) VALUES ('"
+    $query = "INSERT INTO produtos (produto, quantidade) VALUES ('"
     . $this->connection->real_escape_string($produto) . "', '"
     . $this->connection->real_escape_string($quantidade) . "')" ;
 
@@ -63,12 +63,12 @@ public function cadastrar($produto, $quantidade) {
 }
 
 public function consultar() {
-    $query = "SELECT * FROM estoque_produtos ORDER BY id";
+    $query = "SELECT * FROM produtos ORDER BY codigo";
     return $this->run_query_sql($query);
 }
 
 public function editar($codigo, $produto, $quantidade) {
-    $query = "UPDATE estoque_produtos SET produto = '"
+    $query = "UPDATE produtos SET produto = '"
     . $this->connection->real_escape_string($produto) . "', quantidade = " . "'"
     . $this ->connection->real_escape_string($quantidade) . "'" . "WHERE id = " .  $codigo;
 
@@ -76,7 +76,7 @@ public function editar($codigo, $produto, $quantidade) {
 }
 
 public function deletar($codigo){
-    $query = "DELETE FROM estoque_produtos WHERE id = " . $codigo;
+    $query = "DELETE FROM produtos WHERE id = " . $codigo;
     return $this->run_query_sql($query);
 }
 } 

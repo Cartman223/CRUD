@@ -9,14 +9,14 @@ $tipo = 0;
 if (isset($_GET['tipo'])) {
     $tipo = $_GET['tipo'];
 } else {
-    $error = array('error'=> 'Parametro TIPO não especificado!');
+    $error = array('error'=> 'Parametro TIPO nao especificado!');
     echo json_encode($error);
 }
 
 $db_context = new DbContext();
-$db_context->__connect(); // inicia a conexão com o backend
+$db_context->__connect(); // inicia a conexao com o backend
 
-// Avalia o resultado da espressao 'tipo', executando o respectivo codigo para cada caso
+// Avalia o resultado da espressao '$tipo', executando o respectivo codigo para cada caso
 switch ($tipo) {
     // CREATE
     case 1:
@@ -27,7 +27,7 @@ switch ($tipo) {
             $result = $db_context->cadastrar($produto, $quantidade);
             echo $result;
         } else { 
-            $error = array('error' => "Parametro PRODUTO não especificado!");
+            $error = array('error' => "Parametro PRODUTO nao especificado!");
             echo json_encode($error);
         }
 
