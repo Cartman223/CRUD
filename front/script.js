@@ -20,20 +20,25 @@ function request(tipo, codigo, produto, quantidade) {
         }
 
     }).then(function (data) {       // handle fullfiled promise
-
+        
         let produtos = data;
         console.log(produtos);
 
         let table = document.getElementsByTagName('table');
 
-        let rows = '';
+        let rows = "";
 
-        for (let i = 0; i < produtos.length; i++) {
+        for (let i = 0; i < produtos.length; i++) { // O Problema
             rows += "<tr>"
             +   `<td>${produtos[i].codigo}</td>`
             +   `<td>${produtos[i].produto}</td>`    
             +   `<td>${produtos[i].quantidade}</td>`
+            +   "<td>"
+            +    "<button class='btn' id='editar'>Editar</button>"
+            +    "<button class='btn' id='deletar'>Deletar</button>"
+            +    "</td>"
             +   "</tr>"
+            
         }
 
         table[0].innerHTML = ""
@@ -42,12 +47,15 @@ function request(tipo, codigo, produto, quantidade) {
         +   "<th>codigo</th>"
         +   "<th>produto</th>"
         +   "<th>quantidade</th>"
+        +   "<th>açoes"
         +   "</tr>"
         +   rows;
+        
     }).catch(function(error) {      // handle failed promise  
         console.log(error);
     });
 
+    // zera os campos
     document.getElementById('codigo').value = "";
     document.getElementById('produto').value = "";
     document.getElementById('quantidade').value = "";
